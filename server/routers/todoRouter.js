@@ -13,7 +13,7 @@ router.get('/',(req, res, next) => {
     })
 })
 
-router.post('/create', auth,(req, res, next) => {
+router.post('/create', auth ,(req, res, next) => {
     const { task } = req.body
 
     if (!task) {
@@ -29,7 +29,7 @@ router.post('/create', auth,(req, res, next) => {
     })
 })
 
-router.delete('/delete/:id', (req, res, next) => {
+router.delete('/delete/:id', auth, (req, res, next) => {
     const { id } = req.params
 
     console.log(`Deleting task with id: ${id}`)
